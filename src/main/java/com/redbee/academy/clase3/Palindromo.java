@@ -1,5 +1,9 @@
 package com.redbee.academy.clase3;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ArrayList;
+
 public class Palindromo {
 
     /**
@@ -12,7 +16,18 @@ public class Palindromo {
      * @return
      */
     public static Boolean esPalindromo(String palabra) {
-        // TODO: implementar
-        return null;
+        List<String> p = new ArrayList<>();
+        int n = p.size();
+        int i = 0;
+        int j = n;
+        boolean es_palindromo = true;
+        while(i != j && es_palindromo){
+            if(p.get(i) != p.get(j)){
+                es_palindromo = false;
+                i++;
+                j--;
+            }
+        }
+        return es_palindromo;
     }
 }

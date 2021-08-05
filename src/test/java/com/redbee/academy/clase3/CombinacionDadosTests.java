@@ -7,7 +7,7 @@ public class CombinacionDadosTests {
 
     @Test
     void test2dados() {
-        Assertions.assertEquals(2, CombinacionDados.resolverCombinacionesPosiblesCon2Dados(2));
+        Assertions.assertEquals(1, CombinacionDados.resolverCombinacionesPosiblesCon2Dados(2));
     }
 
     @Test
@@ -17,7 +17,7 @@ public class CombinacionDadosTests {
 
     @Test
     void test3dados() {
-        Assertions.assertEquals(3, CombinacionDados.resolverCombinacionesPosiblesCon3Dados(3));
+        Assertions.assertEquals(1, CombinacionDados.resolverCombinacionesPosiblesCon3Dados(3));
     }
 
     @Test

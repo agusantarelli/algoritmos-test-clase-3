@@ -15,8 +15,16 @@ public class CombinacionDados {
      * @return
      */
     public static Integer resolverCombinacionesPosiblesCon2Dados(Integer valor) {
-        // TODO: implementar
-        return null;
+        int n = 12;
+        int combination = 0;
+        for(int i=1;i<=n;i++){
+            for(int j = 1;j<=n;j++){
+                if(i + j == valor){
+                    combination += 1;
+                }
+            }
+        }
+        return combination;
     }
 
     /**
@@ -26,7 +34,17 @@ public class CombinacionDados {
      * @return
      */
     public static Integer resolverCombinacionesPosiblesCon3Dados(Integer valor) {
-        // TODO: implementar
-        return null;
+        int n = 18;
+        int combination = 0;
+        for(int i=1;i<=n;i++){
+            for(int j = 1;j<=n;j++){
+                for(int k=1;k<=n;k++){
+                    if(i + j + k== valor){
+                        combination += 1;
+                    }
+                }
+            }
+        }
+        return combination;
     }
 }

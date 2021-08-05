@@ -9,7 +9,7 @@ public class Digitos {
      * @return
      */
     public static Integer resolver(Long numero) {
-        //TODO: implementar
-        return null;
+        String x = Long.toString(numero);
+        return x.length();
     }
 }

@@ -1,6 +1,9 @@
 package com.redbee.academy.clase3;
 
 import java.util.List;
+import java.lang.Float;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Dolar {
 
@@ -29,7 +32,16 @@ public class Dolar {
      * @return
      */
     public static Float resolver(List<Float> historicoDolar) {
-        //TODO: implementar
-        return null;
+        Float up = 0f;
+        Float max = 0f;
+        for(int i = 0; i < historicoDolar.size()-1;i++){
+            if(historicoDolar.get(i+1) > historicoDolar.get(i)){
+                if(max < (historicoDolar.get(i+1) - historicoDolar.get(i))){
+                    max = historicoDolar.get(i+1) - historicoDolar.get(i);
+                }
+            }
+        }
+        float result = (float) (Math.round(max * 100.0) / 100.0);
+        return result;
     }
 }
