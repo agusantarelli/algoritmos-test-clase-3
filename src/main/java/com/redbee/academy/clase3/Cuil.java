@@ -1,5 +1,12 @@
 package com.redbee.academy.clase3;
 
+import javax.crypto.AEADBadTagException;
+import java.lang.Integer;
+import java.lang.String;
+import java.util.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Cuil {
 
     /**
@@ -41,7 +48,30 @@ public class Cuil {
      * @return
      */
     public static Integer calcular(Integer tipoPersona, Integer dni) {
-        // TODO: implementar
-        return null;
+        String type = String.valueOf(tipoPersona);
+        String doc = String.valueOf(dni);
+        double sum = Cuil.sumaYMultiplicacion(type,doc);
+        int lastDecimal = Cuil.firstDecimal(sum);
+        return (11-lastDecimal);
+    }
+
+    private static Double sumaYMultiplicacion(String type, String doc){
+        double sum = 0.0;
+        sum += Character.getNumericValue(type.charAt(0)) * 5;
+        sum += Character.getNumericValue(type.charAt(1)) * 4;
+        sum += Character.getNumericValue(doc.charAt(0)) * 3;
+        sum += Character.getNumericValue(doc.charAt(1)) * 2;
+        sum += Character.getNumericValue(doc.charAt(2)) * 7;
+        sum += Character.getNumericValue(doc.charAt(3)) * 6;
+        sum += Character.getNumericValue(doc.charAt(4)) * 5;
+        sum += Character.getNumericValue(doc.charAt(5)) * 4;
+        sum += Character.getNumericValue(doc.charAt(6)) * 3;
+        sum += Character.getNumericValue(doc.charAt(7)) * 2;
+        return sum;
+    }
+    private static Integer firstDecimal (Double number){
+        double round = (number/11);
+        int first_dec = (int) Math.round(round * 100.0) % 10;
+        return first_dec;
     }
 }
